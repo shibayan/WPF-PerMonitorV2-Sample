@@ -15,35 +15,6 @@ namespace WpfApp4
             InitializeComponent();
         }
 
-        //protected override void OnSourceInitialized(EventArgs e)
-        //{
-        //    base.OnSourceInitialized(e);
-
-        //    var hMonitor = NativeMethods.MonitorFromWindow(NativeMethods.GetForegroundWindow(), Consts.MONITOR_DEFAULTTOPRIMARY);
-
-        //    NativeMethods.GetDpiForMonitor(hMonitor, Consts.MDT_EFFECTIVE_DPI, out var dpiX, out var dpiY);
-
-        //    var dpiFactorX = dpiX / 96.0;
-        //    var dpiFactorY = dpiY / 96.0;
-
-        //    var physicalWidth = (int)Math.Round(Width * dpiFactorX);
-        //    var physicalHeight = (int)Math.Round(Height * dpiFactorY);
-
-        //    var monitorInfo = new MONITORINFO
-        //    {
-        //        cbSize = Marshal.SizeOf<MONITORINFO>()
-        //    };
-
-        //    NativeMethods.GetMonitorInfo(hMonitor, ref monitorInfo);
-
-        //    var x = monitorInfo.rcWork.x + (monitorInfo.rcWork.cx - monitorInfo.rcWork.x - physicalWidth) / 2;
-        //    var y = monitorInfo.rcWork.y + (monitorInfo.rcWork.cy - monitorInfo.rcWork.y - physicalHeight) / 2;
-
-        //    var hwnd = new WindowInteropHelper(this).Handle;
-
-        //    NativeMethods.SetWindowPos(hwnd, IntPtr.Zero, x, y, 0, 0, Consts.SWP_NOSIZE);
-        //}
-
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
             var hwnd = new WindowInteropHelper(this).Handle;
@@ -130,6 +101,12 @@ namespace WpfApp4
             var y = monitorInfo.rcWork.y + (monitorInfo.rcWork.cy - monitorInfo.rcWork.y - physicalHeight) / 2;
 
             NativeMethods.SetWindowPos(hwnd, IntPtr.Zero, x, y, 0, 0, Consts.SWP_NOSIZE);
+        }
+
+        private void Button5_Click(object sender, RoutedEventArgs e)
+        {
+            Left = (SystemParameters.WorkArea.Width - Width) / 2;
+            Top = (SystemParameters.WorkArea.Height - Height) / 2;
         }
     }
 }

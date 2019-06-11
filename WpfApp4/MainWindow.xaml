@@ -28,6 +28,8 @@
             <TextBlock Text="Per-Monitor DPI" FontSize="18" TextAlignment="Center" Margin="20,5" />
             <Button Click="Button3_Click">Use Window.Left/Top</Button>
             <Button Click="Button4_Click">Use SetWindowPos</Button>
+            <TextBlock Text="Device Independent Pixel" FontSize="18" TextAlignment="Center" Margin="20,5" />
+            <Button Click="Button5_Click">Use Window.Left/Top</Button>
         </StackPanel>
     </Grid>
 </Window>
