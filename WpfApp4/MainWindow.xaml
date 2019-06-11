@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        x:Name="window"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border BorderBrush="Gray" BorderThickness="1">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock TextAlignment="Center" FontSize="18">
+                        <Run Text="Window Location"/><LineBreak/><Run Text="{Binding ElementName=window, Path=Left, Mode=OneWay}" />x<Run Text="{Binding ElementName=window, Path=Top, Mode=OneWay}" />
+                    </TextBlock>
+                    <TextBlock TextAlignment="Center" FontSize="18">
+                        <Run Text="Window Size"/><LineBreak/><Run Text="{Binding ElementName=window, Path=Width}" />x<Run Text="{Binding ElementName=window, Path=Height}" />
+                    </TextBlock>
+                    <TextBlock TextAlignment="Center" FontSize="18">
+                        <Run Text="Actual Window Size"/><LineBreak/><Run Text="{Binding ElementName=window, Path=ActualWidth, Mode=OneWay}" />x<Run Text="{Binding ElementName=window, Path=ActualHeight, Mode=OneWay}" />
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <TextBlock Text="Ignore DPI" FontSize="18" TextAlignment="Center" Margin="20,5" />
+            <Button Click="Button1_Click">Use Window.Left/Top</Button>
+            <Button Click="Button2_Click">Use SetWindowPos</Button>
+            <TextBlock Text="Per-Monitor DPI" FontSize="18" TextAlignment="Center" Margin="20,5" />
+            <Button Click="Button3_Click">Use Window.Left/Top</Button>
+            <Button Click="Button4_Click">Use SetWindowPos</Button>
+        </StackPanel>
+    </Grid>
+</Window>
