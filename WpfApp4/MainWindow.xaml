@@ -6,19 +6,19 @@
         xmlns:local="clr-namespace:WpfApp4"
         mc:Ignorable="d"
         x:Name="window"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="600">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Border BorderBrush="Gray" BorderThickness="1">
+            <Border BorderBrush="Gray" BorderThickness="1" Padding="0,5">
                 <StackPanel Orientation="Vertical">
                     <TextBlock TextAlignment="Center" FontSize="18">
-                        <Run Text="Window Location"/><LineBreak/><Run Text="{Binding ElementName=window, Path=Left, Mode=OneWay}" />x<Run Text="{Binding ElementName=window, Path=Top, Mode=OneWay}" />
+                        <Run Text="Window Pos"/><LineBreak/><Run Text="{Binding ElementName=window, Path=Left, Mode=OneWay}" />x<Run Text="{Binding ElementName=window, Path=Top, Mode=OneWay}" />
                     </TextBlock>
                     <TextBlock TextAlignment="Center" FontSize="18">
                         <Run Text="Window Size"/><LineBreak/><Run Text="{Binding ElementName=window, Path=Width}" />x<Run Text="{Binding ElementName=window, Path=Height}" />
                     </TextBlock>
                     <TextBlock TextAlignment="Center" FontSize="18">
-                        <Run Text="Actual Window Size"/><LineBreak/><Run Text="{Binding ElementName=window, Path=ActualWidth, Mode=OneWay}" />x<Run Text="{Binding ElementName=window, Path=ActualHeight, Mode=OneWay}" />
+                        <Run Text="Primary Screen Size"/><LineBreak/><Run Text="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, Mode=OneWay}" />x<Run Text="{Binding Source={x:Static SystemParameters.PrimaryScreenHeight}, Mode=OneWay}" />
                     </TextBlock>
                 </StackPanel>
             </Border>
