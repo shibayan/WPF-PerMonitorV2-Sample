@@ -33,18 +33,10 @@ namespace WpfApp4
     [StructLayout(LayoutKind.Sequential)]
     internal struct RECT
     {
-        public int x;
-        public int y;
-        public int cx;
-        public int cy;
-
-        public RECT(int x, int y, int cx, int cy)
-        {
-            this.x = x;
-            this.y = y;
-            this.cx = cx;
-            this.cy = cy;
-        }
+        public int left;
+        public int top;
+        public int right;
+        public int bottom;
     }
 
     internal static class Consts

@@ -28,8 +28,8 @@ namespace WpfApp4
 
             NativeMethods.GetMonitorInfo(hMonitor, ref monitorInfo);
 
-            Left = monitorInfo.rcWork.x + (monitorInfo.rcWork.cx - monitorInfo.rcWork.x - Width) / 2;
-            Top = monitorInfo.rcWork.y + (monitorInfo.rcWork.cy - monitorInfo.rcWork.y - Height) / 2;
+            Left = monitorInfo.rcWork.left + (monitorInfo.rcWork.right - monitorInfo.rcWork.left - Width) / 2;
+            Top = monitorInfo.rcWork.top + (monitorInfo.rcWork.bottom - monitorInfo.rcWork.top - Height) / 2;
         }
 
         private void Button2_Click(object sender, RoutedEventArgs e)
@@ -45,8 +45,8 @@ namespace WpfApp4
 
             NativeMethods.GetMonitorInfo(hMonitor, ref monitorInfo);
 
-            var x = monitorInfo.rcWork.x + (monitorInfo.rcWork.cx - monitorInfo.rcWork.x - Width) / 2;
-            var y = monitorInfo.rcWork.y + (monitorInfo.rcWork.cy - monitorInfo.rcWork.y - Height) / 2;
+            var x = monitorInfo.rcWork.left + (monitorInfo.rcWork.right - monitorInfo.rcWork.left - Width) / 2;
+            var y = monitorInfo.rcWork.top + (monitorInfo.rcWork.bottom - monitorInfo.rcWork.top - Height) / 2;
 
             NativeMethods.SetWindowPos(hwnd, IntPtr.Zero, (int)x, (int)y, 0, 0, Consts.SWP_NOSIZE);
         }
@@ -72,8 +72,8 @@ namespace WpfApp4
 
             NativeMethods.GetMonitorInfo(hMonitor, ref monitorInfo);
 
-            Left = monitorInfo.rcWork.x + (monitorInfo.rcWork.cx - monitorInfo.rcWork.x - physicalWidth) / 2;
-            Top = monitorInfo.rcWork.y + (monitorInfo.rcWork.cy - monitorInfo.rcWork.y - physicalHeight) / 2;
+            Left = monitorInfo.rcWork.left + (monitorInfo.rcWork.right - monitorInfo.rcWork.left - physicalWidth) / 2;
+            Top = monitorInfo.rcWork.top + (monitorInfo.rcWork.bottom - monitorInfo.rcWork.top - physicalHeight) / 2;
         }
 
         private void Button4_Click(object sender, RoutedEventArgs e)
@@ -97,8 +97,8 @@ namespace WpfApp4
 
             NativeMethods.GetMonitorInfo(hMonitor, ref monitorInfo);
 
-            var x = monitorInfo.rcWork.x + (monitorInfo.rcWork.cx - monitorInfo.rcWork.x - physicalWidth) / 2;
-            var y = monitorInfo.rcWork.y + (monitorInfo.rcWork.cy - monitorInfo.rcWork.y - physicalHeight) / 2;
+            var x = monitorInfo.rcWork.left + (monitorInfo.rcWork.right - monitorInfo.rcWork.left - physicalWidth) / 2;
+            var y = monitorInfo.rcWork.top + (monitorInfo.rcWork.bottom - monitorInfo.rcWork.top - physicalHeight) / 2;
 
             NativeMethods.SetWindowPos(hwnd, IntPtr.Zero, x, y, 0, 0, Consts.SWP_NOSIZE);
         }
